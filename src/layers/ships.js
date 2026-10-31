@@ -101,7 +101,11 @@ export function shouldRenderShipAsVolume({
   )
 }
 
-export function shouldRenderShipDetailModel() { return false; }
+export function shouldRenderShipDetailModel({
+  isSelected = false,
+} = {}) {
+  return isSelected === true;
+}
 
 function interpolateAngleDegrees(start, end, progress) {
   const normalizedStart = normalizeAngleDegrees(start)
@@ -823,7 +827,7 @@ export function createShipLayer({
         ) {
           count += 1
         }
-      } catch (e) {
+      } catch {
         // defensive: skip problematic entries
       }
     })
@@ -1456,7 +1460,7 @@ export function createShipLayer({
                 entry._lastRenderedUpdateMs = 0
                 syncEntryVisibility(entry)
               }
-            } catch (e) {
+            } catch {
               // defensive
             }
           }

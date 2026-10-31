@@ -10,11 +10,6 @@ function toTrimmedString(value, fallback = '') {
   return typeof value === 'string' ? value.trim() || fallback : fallback
 }
 
-function toFiniteNumber(value, fallback = null) {
-  const parsedValue = Number(value)
-
-  return Number.isFinite(parsedValue) ? parsedValue : fallback
-}
 
 function normalizeTimestampMs(value, fallbackMs = Date.now()) {
   const parsedValue = Number(value)

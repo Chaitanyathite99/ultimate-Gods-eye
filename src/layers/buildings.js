@@ -135,7 +135,7 @@ export function createBuildingLayer({ viewer } = {}) {
           if ('immediatelyLoadDesiredLevelOfDetail' in nextTileset) {
             nextTileset.immediatelyLoadDesiredLevelOfDetail = false
           }
-        } catch (e) {
+        } catch {
           // defensive: some tileset implementations may not expose these
         }
 
